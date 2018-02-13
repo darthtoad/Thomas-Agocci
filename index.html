@@ -13,8 +13,8 @@
     <div class="container-fluid">
       <h1>Hey, I'm-a Thomas Agocci!</h1>
       <img src="/img/thomas-agocci.jpg" alt="Picture of Thomas Agocci" />
-      <p>Choose your Thomas Agocci!</p>
       <form id="start">
+        <p>Choose your Thomas Agocci!</p>
         <select id="select">
           <option value="Random">Random Thomas Agocci</option>
           <option value="Big">Big Thomas Agocci</option>
@@ -23,6 +23,13 @@
           <option value="Geeky">Geeky Thomas Agocci</option>
           <option value="default">Normal Thomas Agocci</option>
         </select>
+        <p>Choose your difficulty level</p>
+        <input type="radio" id="easy" value="easy" name="difficulty">
+        <label for="easy">Easy</label>
+        <input type="radio" id="medium" value="medium" name="difficulty">
+        <label for="medium">Medium</label>
+        <input type="radio" id="hard" value="hard" name="difficulty">
+        <label for="hard">Hard</label>
         <button type="submit">Start</button>
       </form>
       <div id="game">
@@ -40,6 +47,8 @@
         <button id="grappa">Take a Shot of Grappa</button>
         <button id="chess">Play chess</button>
         <button id="politics">Argue About Politics</button>
+      </div>
+      <div id="levels">
       </div>
     </div>
   </body>

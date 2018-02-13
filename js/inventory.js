@@ -1,7 +1,7 @@
 export class Inventory {
   constructor(pasta, pizza, cannoli, espresso, gnocci, wine) {
     this.pasta = pasta;
-    this.pizza = Pizza;
+    this.pizza = pizza;
     this.cannoli = cannoli;
     this.espresso = espresso;
     this.gnocci = gnocci;
@@ -23,10 +23,13 @@ export class Inventory {
           break;
         case 3:
           this.espresso++;
+          break;
         case 4:
           this.gnocci++;
+          break;
         case 5:
           this.wine++;
+          break;
       }
     }, 1000)
   }

@@ -3,7 +3,40 @@ import { ThomasAgocci } from './../js/scripts.js';
 $(document).ready(function(){
   $('#start').submit(function(event){
     event.preventDefault();
-    let thomasAgocci = new ThomasAgocci($('#select option:selected').val());
+    $('#levels').show();
+    $('#inventory').show();
+    let thomasAgocci = new ThomasAgocci($('#select option:selected').val(), $("input:radio[name=difficulty]:checked").val());
+    thomasAgocci.setThomasAgocciByType(thomasAgocci.name);
+    thomasAgocci.setHunger();
+    $("#game").show();
+    let inventory = new Inventory(1, 1, 1, 1, 1, 1);
+    inventory.addRandomFood();
+    let invetoryRefresh = setInterval(() => {
+      if (!thomasAgocci.isHeDead()) {
+        $('#inventory').text(`Pasta: ${inventory.pasta}\nPizza: ${inventory.pizza}\nCannoli: ${inventory.cannoli}\nEspresso: ${inventory.espresso}\nGnocci: ${inventory.gnocci}\nWine: ${inventory.wine}`);
+      } else {
+        $('#inventory').hide();
+        clearRefresh();
+      }
+    }, 1000)
+    function clearRefresh() {
+      clearInterval(invetoryRefresh);
+    }
+
+    let check = setInterval(() => {
+      if (!thomasAgocci.isHeDead()) {
+        $('#levels').text(`Food: ${thomasAgocci.foodLevel} Sleep: ${thomasAgocci.sleepLevel} Mood: ${thomasAgocci.moodLevel} Poop and Pee: ${thomasAgocci.poopAndPeeLevel} Temperature: ${thomasAgocci.temperature} Intellectual Stimulation: ${thomasAgocci.intellectualStimulation}`);
+      } else {
+        alert('Your Thomas Agocci died');
+        $('#game').hide();
+        $('#levels').hide();
+        $('#start').show();
+        clearCheck();
+      }
+    }, 1000)
+    function clearCheck() {
+      clearInterval(check);
+    }
     $('#food').submit(function(event){
       event.preventDefault();
       if ($('input:text[name="food-name"]').val().toLowerCase().trim() === "pasta" && inventory.pasta > 0) {

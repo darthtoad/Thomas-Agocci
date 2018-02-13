@@ -17,14 +17,14 @@ export class ThomasAgocci {
     switch(this.name) {
       case "Random":
         let total = 200;
-        this.foodLevel = Math.ceil((total * Math.random()) / 8);
+        this.foodLevel = Math.ceil((total * Math.random()) / 8) + 1;
         this.favoriteFoods = [allFoods[Math.floor(Math.random() * 6)], allFoods[Math.floor(Math.random() * 6)]];
         this.hatedFoods = [allFoods[Math.floor(Math.random() * 6)], allFoods[Math.floor(Math.random() * 6)]];
-        this.sleepLevel = Math.ceil(total * Math.random() / 8);
-        this.moodLevel = Math.ceil(total * Math.random() / 8);
-        this.poopAndPeeLevel = Math.ceil(total * Math.random() / 8);
-        this.temperature = Math.ceil(total * Math.random() / 8);
-        this.intellectualStimulation = Math.ceil(total * Math.random() / 8);
+        this.sleepLevel = Math.ceil(total * Math.random() / 8) + 1;
+        this.moodLevel = Math.ceil(total * Math.random() / 8) + 1;
+        this.poopAndPeeLevel = Math.ceil(total * Math.random() / 8) + 1;
+        this.temperature = 5;
+        this.intellectualStimulation = Math.ceil(total * Math.random() / 8) + 1;
         break;
 
       case "Big":
@@ -77,14 +77,19 @@ export class ThomasAgocci {
         this.hatedFoods = [];
         this.sleepLevel = 15;
         this.moodLevel = 15;
+        this.poopAndPeeLevel = 15;
         this.temperature = 5;
         this.intellectualStimulation = 15;
+        break;
     }
   }
 
   setHunger() {
-    if (this.difficulty === "easy") {
-      setInterval(() => {
+    let intervals;
+    if (this.isHeDead()) {
+      clearInterval(intervals);
+    } else if (this.difficulty === "easy") {
+      intervals = setInterval(() => {
         this.foodLevel--;
         this.sleepLevel--;
         this.intellectualStimulation--;
@@ -97,7 +102,7 @@ export class ThomasAgocci {
         }
       }, 2000);
     } else if (this.difficulty === "medium") {
-      setInterval(() => {
+      intervals = setInterval(() => {
         this.foodLevel--;
         this.sleepLevel--;
         this.intellectualStimulation--;
@@ -110,7 +115,7 @@ export class ThomasAgocci {
         }
       }, 1000);
     } else {
-      setInterval(() => {
+      intervals = setInterval(() => {
         this.foodLevel--;
         this.sleepLevel--;
         this.intellectualStimulation--;
@@ -136,6 +141,7 @@ export class ThomasAgocci {
   }
 
   feed(food) {
+    console.log(this.favoriteFoods);
     if (this.favoriteFoods.includes(food)) {
       this.foodLevel += 25;
       this.poopAndPeeLevel -= 5;

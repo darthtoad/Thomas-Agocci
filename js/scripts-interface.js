@@ -23,6 +23,146 @@ $(document).ready(function(){
       clearInterval(invetoryRefresh);
     }
 
+    let pic = setInterval(() => {
+      if (thomasAgocci.isHeDead()) {
+        clearPic();
+      } else if (thomasAgocci.foodLevel < 5) {
+        let request = new XMLHttpRequest();
+        let url = `http://api.giphy.com/v1/gifs/random?api_key=e9IFSFXsO1Rw8E0kOle8uW9i3uuP6GAn&tag=tamagotchi-hungry`;
+
+        request.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            getElements(response);
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+        let getElements = function(response) {
+          $("#pic").empty();
+          $("#pic").append(`<img src="${response.data.images.fixed_height.url}" alt="Thomas Agocci's mood" />`);
+          console.log(response.data.url);
+        }
+      } else if (thomasAgocci.sleepLevel < 5) {
+        let request = new XMLHttpRequest();
+        let url = `http://api.giphy.com/v1/gifs/random?api_key=e9IFSFXsO1Rw8E0kOle8uW9i3uuP6GAn&tag=tamagotchi-tired`;
+
+        request.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            getElements(response);
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+        let getElements = function(response) {
+          $("#pic").empty();
+          $("#pic").append(`<img src="${response.data.images.fixed_height.url}" alt="Thomas Agocci's mood" />`);
+          console.log(response.data.url);
+        }
+      } else if (thomasAgocci.poopAndPeeLevel < 5) {
+        let request = new XMLHttpRequest();
+        let url = `http://api.giphy.com/v1/gifs/random?api_key=e9IFSFXsO1Rw8E0kOle8uW9i3uuP6GAn&tag=tamagotchi-poop`;
+
+        request.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            getElements(response);
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+        let getElements = function(response) {
+          $("#pic").empty();
+          $("#pic").append(`<img src="${response.data.images.fixed_height.url}" alt="Thomas Agocci's mood" />`); console.log(response.data.url);
+        }
+      } else if (thomasAgocci.moodLevel < 5) {
+        let request = new XMLHttpRequest();
+        let url = `http://api.giphy.com/v1/gifs/random?api_key=e9IFSFXsO1Rw8E0kOle8uW9i3uuP6GAn&tag=tamagotchi-sad`;
+
+        request.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            getElements(response);
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+        let getElements = function(response) {
+          $("#pic").empty();
+          $("#pic").append(`<img src="${response.data.images.fixed_height.url}" alt="Thomas Agocci's mood" />`); console.log(response.data.url);
+        }
+      } else if (thomasAgocci.intellectualStimulation < 5) {
+        let request = new XMLHttpRequest();
+        let url = `http://api.giphy.com/v1/gifs/random?api_key=e9IFSFXsO1Rw8E0kOle8uW9i3uuP6GAn&tag=tamagotchi-bored`;
+
+        request.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            getElements(response);
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+        let getElements = function(response) {
+          $("#pic").empty();
+          $("#pic").append(`<img src="${response.data.images.fixed_height.url}" alt="Thomas Agocci's mood" />`); console.log(response.data.url);
+        }
+      } else if (thomasAgocci.temperature < 3) {
+        let request = new XMLHttpRequest();
+        let url = `http://api.giphy.com/v1/gifs/random?api_key=e9IFSFXsO1Rw8E0kOle8uW9i3uuP6GAn&tag=tamagotchi-cold`;
+
+        request.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            getElements(response);
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+        let getElements = function(response) {
+          $("#pic").empty();
+          $("#pic").append(`<img src="${response.data.images.fixed_height.url}" alt="Thomas Agocci's mood" />`); console.log(response.data.url);
+        }
+      } else if (thomasAgocci.temperature > 7) {
+        let request = new XMLHttpRequest();
+        let url = `http://api.giphy.com/v1/gifs/random?api_key=e9IFSFXsO1Rw8E0kOle8uW9i3uuP6GAn&tag=tamagotchi-hot`;
+
+        request.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            getElements(response);
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+        let getElements = function(response) {
+          $("#pic").empty();
+          $("#pic").append(`<img src="${response.data.images.fixed_height.url}" alt="Thomas Agocci's mood" />`); console.log(response.data.url);
+        }
+      } else {
+        let request = new XMLHttpRequest();
+        let url = `http://api.giphy.com/v1/gifs/random?api_key=e9IFSFXsO1Rw8E0kOle8uW9i3uuP6GAn&tag=tamagotchi`;
+
+        request.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            getElements(response);
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+        let getElements = function(response) {
+          $("#pic").empty();
+          $("#pic").append(`<img src="${response.data.images.fixed_height.url}" alt="Thomas Agocci's mood" />`); console.log(response.data.url);
+        }
+      }
+    }, 5000)
+
+    function clearPic() {
+      clearInterval(pic);
+    }
+
     let check = setInterval(() => {
       if (!thomasAgocci.isHeDead()) {
         $('#levels').text(`Food: ${thomasAgocci.foodLevel} Sleep: ${thomasAgocci.sleepLevel} Mood: ${thomasAgocci.moodLevel} Poop and Pee: ${thomasAgocci.poopAndPeeLevel} Temperature: ${thomasAgocci.temperature} Intellectual Stimulation: ${thomasAgocci.intellectualStimulation}`);

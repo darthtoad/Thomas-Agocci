@@ -179,22 +179,22 @@ $(document).ready(function(){
     }
     $('#food').submit(function(event){
       event.preventDefault();
-      if ($('input:text[name="food-name"]').val().toLowerCase().trim() === "pasta" && inventory.pasta > 0) {
+      if ($('#food-select option:selected').val().toLowerCase().trim() === "pasta" && inventory.pasta > 0) {
         inventory.pasta--;
         thomasAgocci.feed("Pasta");
-      } else if ($('input:text[name="food-name"]').val().toLowerCase().trim() === "pizza" && inventory.pizza > 0) {
+      } else if ($('#food-select option:selected').val().toLowerCase().trim() === "pizza" && inventory.pizza > 0) {
         inventory.pizza--;
         thomasAgocci.feed("Pizza");
-      } else if ($('input:text[name="food-name"]').val().toLowerCase().trim() === "cannoli" && inventory.cannoli > 0) {
+      } else if ($('#food-select option:selected').val().toLowerCase().trim() === "cannoli" && inventory.cannoli > 0) {
         inventory.cannoli--;
         thomasAgocci.feed("Cannoli");
-      } else if ($('input:text[name="food-name"]').val().toLowerCase().trim() === "espresso" && inventory.espresso > 0) {
+      } else if ($('#food-select option:selected').val().toLowerCase().trim() === "espresso" && inventory.espresso > 0) {
         inventory.espresso--;
         thomasAgocci.feed("Espresso");
-      } else if ($('input:text[name="food-name"]').val().toLowerCase().trim() === "gnocci" && inventory.gnocci > 0) {
+      } else if ($('#food-select option:selected').val().toLowerCase().trim() === "gnocci" && inventory.gnocci > 0) {
         inventory.gnocci--;
         thomasAgocci.feed("Gnocci");
-      } else if ($('input:text[name="food-name"]').val().toLowerCase().trim() === "wine" && inventory.wine > 0) {
+      } else if ($('#food-select option:selected').val().toLowerCase().trim() === "wine" && inventory.wine > 0) {
         inventory.wine--;
         thomasAgocci.feed("Wine");
       } else {

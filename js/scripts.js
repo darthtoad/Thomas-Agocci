@@ -17,14 +17,14 @@ export class ThomasAgocci {
     switch(this.name) {
       case "Random":
         let total = 200;
-        this.foodLevel = Math.ceil((total * Math.random()) / 8) + 1;
+        this.foodLevel = Math.ceil((total * Math.random()) / 8) + 7;
         this.favoriteFoods = [allFoods[Math.floor(Math.random() * 6)], allFoods[Math.floor(Math.random() * 6)]];
         this.hatedFoods = [allFoods[Math.floor(Math.random() * 6)], allFoods[Math.floor(Math.random() * 6)]];
-        this.sleepLevel = Math.ceil(total * Math.random() / 8) + 1;
-        this.moodLevel = Math.ceil(total * Math.random() / 8) + 1;
-        this.poopAndPeeLevel = Math.ceil(total * Math.random() / 8) + 1;
+        this.sleepLevel = Math.ceil(total * Math.random() / 8) + 7;
+        this.moodLevel = Math.ceil(total * Math.random() / 8) + 7;
+        this.poopAndPeeLevel = Math.ceil(total * Math.random() / 8) + 7;
         this.temperature = 5;
-        this.intellectualStimulation = Math.ceil(total * Math.random() / 8) + 1;
+        this.intellectualStimulation = Math.ceil(total * Math.random() / 8) + 7;
         break;
 
       case "Big":

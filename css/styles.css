@@ -4,4 +4,25 @@
 
 #levels {
   display: none;
+  background-color: skyblue;
+  font-size: 20pt;
+  font-weight: 400;
+  border: 4px outset orange;
+}
+
+body {
+  background: url(/../img/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+#inventory {
+  font-size: 18pt;
+}
+
+#start {
+  width: 480px;
+}
+
+.panel-heading {
+  font-size: 22pt;
 }

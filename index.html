@@ -12,8 +12,16 @@
   <body>
     <div class="container-fluid">
       <h1>Hey, I'm-a Thomas Agocci!</h1>
-      <img src="/img/thomas-agocci.jpg" alt="Picture of Thomas Agocci" />
-      <form id="start">
+      <div class="row">
+        <div class="col-md-5">
+          <img src="/img/thomas-agocci.jpg" alt="Picture of Thomas Agocci" />
+        </div>
+        <div class="col-md-5">
+          <div id="pic">
+          </div>
+        </div>
+      </div>
+      <form id="start" class="well">
         <p>Choose your Thomas Agocci!</p>
         <select id="select">
           <option value="Random">Random Thomas Agocci</option>
@@ -33,11 +41,16 @@
         <button type="submit">Start</button>
       </form>
       <div id="game">
-        <div id="pic">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Inventory
+          </div>
+          <div class="panel-body">
+            <div id="inventory">
+            </div>
+          </div>
         </div>
-        <div id="inventory">
-        </div>
-        <form id="food">
+        <form id="food" class="well">
           <select id="food-select">
             <option value="Pizza">Pizza</option>
             <option value="Pasta">Pasta</option>
@@ -48,13 +61,27 @@
           </select>
           <button type="submit">Feed Thomas Agocci</button>
         </form>
-        <button id="bathroom">Take to Bathroom</button><br>
-        <button id="bed">Put to Bed</button><br>
-        <button id="ac">Turn on AC</button><br>
-        <button id="heat">Turn on Heat</button><br>
-        <button id="grappa">Take a Shot of Grappa</button>
-        <button id="chess">Play chess</button>
-        <button id="politics">Argue About Politics</button>
+        <div class="buttons">
+          <div class="row">
+            <div class="col-sm-6">
+              <button class="well" id="bathroom">Take to Bathroom</button><br>
+              <button class="well" id="bed">Put to Bed</button><br>
+            </div>
+            <div class="col-sm-6">
+              <button class="well" id="ac">Turn on AC</button><br>
+              <button class="well" id="heat">Turn on Heat</button><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <button class="well" id="grappa">Take a Shot of Grappa</button>
+              <button class="well" id="chess">Play chess</button>
+            </div>
+            <div class="col-sm-6">
+              <button class="well" id="politics">Argue About Politics</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="levels">
       </div>

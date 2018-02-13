@@ -13,7 +13,8 @@ $(document).ready(function(){
     inventory.addRandomFood();
     let invetoryRefresh = setInterval(() => {
       if (!thomasAgocci.isHeDead()) {
-        $('#inventory').text(`Pasta: ${inventory.pasta}\nPizza: ${inventory.pizza}\nCannoli: ${inventory.cannoli}\nEspresso: ${inventory.espresso}\nGnocci: ${inventory.gnocci}\nWine: ${inventory.wine}`);
+        $("#inventory").empty();
+        $('#inventory').append('<div class="row">' + `Pasta: ${inventory.pasta} Pizza: ${inventory.pizza}       Cannoli: ${inventory.cannoli}` + '</div><div class="row">' + `Espresso: ${inventory.espresso}        Gnocci: ${inventory.gnocci}` + ` Wine: ${inventory.wine}` + '</div>');
       } else {
         $('#inventory').hide();
         clearRefresh();
@@ -165,10 +166,12 @@ $(document).ready(function(){
 
     let check = setInterval(() => {
       if (!thomasAgocci.isHeDead()) {
-        $('#levels').text(`Food: ${thomasAgocci.foodLevel} Sleep: ${thomasAgocci.sleepLevel} Mood: ${thomasAgocci.moodLevel} Poop and Pee: ${thomasAgocci.poopAndPeeLevel} Temperature: ${thomasAgocci.temperature} Intellectual Stimulation: ${thomasAgocci.intellectualStimulation}`);
+        $('#levels').empty();
+        $('#levels').append(`Food: ${thomasAgocci.foodLevel}` + '<br>' + ` Sleep: ${thomasAgocci.sleepLevel}` + '<br>' + ` Mood: ${thomasAgocci.moodLevel}` + '<br>' + ` Poop and Pee: ${thomasAgocci.poopAndPeeLevel}` + '<br>' + ` Temperature: ${thomasAgocci.temperature}` + '<br>' + ` Intellectual Stimulation: ${thomasAgocci.intellectualStimulation}`);
       } else {
         alert('Your Thomas Agocci died');
         $('#game').hide();
+        $('#levels').empty();
         $('#levels').hide();
         $('#start').show();
         clearCheck();

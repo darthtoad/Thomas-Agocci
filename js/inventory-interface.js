@@ -1,7 +1,7 @@
 import { Inventory } from './../js/inventory.js';
 
 $(document).ready(function(){
-  $("#start").click(function(){
+  $("#start").submit(function(){
     $("#game").show();
     let inventory = new Inventory(1, 1, 1, 1, 1, 1);
     inventory.addRandomFood();
